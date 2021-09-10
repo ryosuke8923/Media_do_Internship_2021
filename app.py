@@ -11,6 +11,7 @@ load_dotenv(dotenv_path)
 app = Flask(__name__)
 
 TOKEN = os.environ.get("TEST")
+# TOKEN = 334
 
 @app.route('/')
 def hello_world():
