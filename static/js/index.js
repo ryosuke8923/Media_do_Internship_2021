@@ -17,8 +17,8 @@ const test = (arg) => {
     }
 };
 
-document.getElementsByTagName('button')[0].addEventListener('click', () => {
+// document.getElementsByTagName('button')[0].addEventListener('click', () => {
     // 命令を書く
-    test(3);
-    window.alert('Hello World!');
-});
+    // test(3);
+    // window.alert('Hello World!');
+// });
