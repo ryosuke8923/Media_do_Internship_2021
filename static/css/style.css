@@ -3,7 +3,7 @@
     top: 100px;
     height:500px;
     width:100%;
-    padding-top:25vh;
+    padding-top:30vh;
 }
 
 .search-form{
@@ -17,7 +17,7 @@
 }
 
 .btn{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .btn-outline-success{
