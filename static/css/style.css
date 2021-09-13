@@ -3,7 +3,7 @@
     top: 100px;
     height:500px;
     width:100%;
-    padding-top:25vh;
+    padding-top:30vh;
 }
 
 .search-form{
@@ -13,13 +13,11 @@
 }
 
 .form-control{
-    border-radius: 50px;
     border-color: #4D4D4D;
 }
 
-.btn{/*インラインブロック*/
-    margin-top: 40px;
-    border-radius: 50px;
+.btn{
+    margin-top: 20px;
 }
 
 .btn-outline-success{
@@ -28,13 +26,11 @@
     border-color: #4D4D4D;
 }
 
-.btn-outline-success:hover{
-    background-color: #4D4D4D;
-    color: #ffffff;
-    border-color: #4D4D4D;
-}
-
-.btn-outline-success:active{
+.btn-outline-success:hover,
+.btn-outline-success:active,
+.btn-outline-success:visited,
+.btn-outline-success:focus,
+.btn-outline-success.disabled{
     background-color: #4D4D4D;
     color: #ffffff;
     border-color: #4D4D4D;
