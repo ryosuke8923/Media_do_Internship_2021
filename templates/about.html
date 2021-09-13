@@ -12,7 +12,9 @@
     <link rel="apple-touch-icon" href="icon.png">
     -->
     <!-- Place favicon.ico in the root directory -->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -22,7 +24,7 @@
     <!-- header -->
     <header>
         <nav class="navbar navbar-light navbar-expand-md " style="background-color: #ccefbf;">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="/">
                 AIUEO
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,41 +42,83 @@
             </div>
         </nav>
     </header>
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-5 mb-2" style="color: #006E50;">AIUEO</h2>
+        <p class="text-muted mb-2 text-center AIUEOsize">
+            <span class="AIUEOcolor">AI</span>によるM<span class="AIUEOcolor">U</span>SICで<span class="AIUEOcolor">E</span>B<span class="AIUEOcolor">O</span>OKを楽しく！
+        </p>
+    </div>
+
+    <!-- こんな時に -->
     <section class="page-section" style="margin-bottom:10rem">
         <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-5 mb-5" style="color: #006E50;">AIUEO</h2>
-            <p class="text-black-75 mb-12 text-center">
-                <font style="color: #006E50;">AI</font>によるM<font style="color: #006E50;">U</font>SICで<font style="color: #006E50;">E</font>B<font style="color: #006E50;">O</font>OKを楽しく！
-            <hr class="divider" />
             <h2 class="text-center mt-5" >こんな時に</h2>
+            <hr class="divider" />
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-4 col-md-12 text-center">
                     <div class="mt-5">
-                        <div class="mb-3"><i class="fas fa-train fa-4x" style="color: #f4623a;"></i></div>
-                        
+                        <div class="mb-3"><i class="fas fa-train fa-4x konna"></i>
+                        </div>
                         <h3 class="h4 mb-2">電車のガヤガヤ</h3>
                         <p class="text-muted mb-0">電車のガヤガヤがなくなって落ち着けるよ～～～</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 text-center">
                     <div class="mt-5">
-                        <div class="mb-3"><i class="fas fa-book fa-4x" style="color: #f4623a;"></i></div>
-                        <h3 class="h4 mb-2">本の世界観に入り込みたいとき</h3>
+                        <div class="mb-3"><i class="fas fa-book fa-4x konna"></i></div>
+                        <h3 class="h4 mb-2">本の世界観に</h3>
                         <p class="text-muted mb-0">本の世界観に入り込めるよ～～～</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 text-center">
                     <div class="mt-5">
-                        <div class="mb-3"><i class="fas fa-bed fa-4x" style="color: #f4623a;"></i></div>
+                        <div class="mb-3"><i class="fas fa-bed fa-4x konna"></i></div>
                         <h3 class="h4 mb-2">リラックス</h3>
                         <p class="text-muted mb-0">本に合う曲をAIが自動選曲するのでリラックスすることができます</p>
                     </div>
                 </div>
-
             </div>
         </div>
-</div>
-</section>
+    </section>
+
+    <!-- how to use -->
+    <section class="page-section" style="margin-bottom:10rem">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-5" >使い方</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-4 col-md-12 text-center">
+                    <div class="mt-5">
+                        <h3 class="h4 mb-3">Step 1</h3>
+                        <div class="mb-3">
+                            <img src="../static/images/Books_SVG.svg" class="aboutsvg">
+                        </div>
+                        <p class="text-muted mb-0">読む本を決めよう</p>
+                        <p class="text-muted mb-0">小説・マンガ対応</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center">
+                    <div class="mt-5">
+                        <h3 class="h4 mb-3">Step 2</h3>
+                        <div class="mb-3">
+                            <img src="../static/images/Search_SVG.svg" class="aboutsvg2">
+                        </div>
+                        <p class="text-muted mb-0">本のタイトルを入力して検索しよう</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center">
+                    <div class="mt-5">
+                        <h3 class="h4 mb-3">Step 3</h3>
+                        <div class="mb-3">
+                            <img src="../static/images/Music_Isometric.svg" class="aboutsvg3">
+                        </div>
+                        
+                        <p class="text-muted mb-0">本に合う曲を表示します</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     
     <!-- footer -->
