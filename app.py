@@ -19,5 +19,9 @@ def hello_world():
     # target = os.environ.get('TARGET', 'World')
     return render_template('index.html')
 
+@app.route('/about')
+def aboutPage():
+    return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8888)))
