@@ -1,3 +1,6 @@
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+}
 .search{
     position:absolute;
     top: 100px;
@@ -34,4 +37,26 @@
     background-color: #4D4D4D;
     color: #ffffff;
     border-color: #4D4D4D;
+}
+
+
+/* about */
+i.konna{
+    color: #f4623a;
+}
+span.AIUEOcolor{
+    color: #006E50;
+    font-weight: 700;
+}
+p.AIUEOsize{
+    font-size: 19px;
+}
+.aboutsvg{
+    width: 40%;
+}
+.aboutsvg2{
+    width: 47%;
+}
+.aboutsvg3{
+    width: 70%;
 }
