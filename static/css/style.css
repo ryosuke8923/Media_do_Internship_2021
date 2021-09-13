@@ -1,0 +1,41 @@
+.search{
+    position:absolute;
+    top: 100px;
+    height:500px;
+    width:100%;
+    padding-top:25vh;
+}
+
+.search-form{
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+
+.form-control{
+    border-radius: 50px;
+    border-color: #4D4D4D;
+}
+
+.btn{/*インラインブロック*/
+    margin-top: 40px;
+    border-radius: 50px;
+}
+
+.btn-outline-success{
+    background-color: #ffffff;
+    color: #4D4D4D;
+    border-color: #4D4D4D;
+}
+
+.btn-outline-success:hover{
+    background-color: #4D4D4D;
+    color: #ffffff;
+    border-color: #4D4D4D;
+}
+
+.btn-outline-success:active{
+    background-color: #4D4D4D;
+    color: #ffffff;
+    border-color: #4D4D4D;
+}
