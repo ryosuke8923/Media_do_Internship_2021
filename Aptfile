@@ -1,4 +1,4 @@
 mecab
 libmecab-dev
 mecab-ipadic-utf8
-g++-9-multilib
+build-essential
