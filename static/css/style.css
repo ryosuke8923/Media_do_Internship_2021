@@ -41,8 +41,11 @@ body{
 
 
 /* about */
+h2.aiueo{
+    color: #006E50;
+}
 i.konna{
-    color: #f4623a;
+    color: #757575;
 }
 span.AIUEOcolor{
     color: #006E50;
@@ -59,4 +62,9 @@ p.AIUEOsize{
 }
 .aboutsvg3{
     width: 70%;
+}
+@media screen and (max-width:420px) {
+    p.AIUEOsize2{
+        font-size: 15px;
+    }
 }
