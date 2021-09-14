@@ -6,3 +6,4 @@ pymlask==0.3.2
 mecab-python3==1.0.4
 spotipy
 numpy==1.20.2
+unidic-lite
