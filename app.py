@@ -108,7 +108,7 @@ def get_songs_from_playlist(playlist_id: str):
         song_name = item['track']['name']
         artist = item['track']['artists'][0]['name']
         ref = item['track']['href']
-        images = item['track']['album']['images'][-1]
+        images = item['track']['album']['images'][-1]['url']
         # preview_url = item['track']['preview_url']
         songs.append([song_name, artist, ref, images]) # 曲名, アーティスト, URL, 画像
     if len(songs) < RECOMMEND_NUM:
