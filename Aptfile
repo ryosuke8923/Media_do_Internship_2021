@@ -1,3 +1,5 @@
 mecab
 libmecab-dev
+mecab-ipadic
 mecab-ipadic-utf8
+g++
