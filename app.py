@@ -121,11 +121,13 @@ def get_songs_from_playlist(playlist_id: str):
         song_name = item['track']['name']
         artist = item['track']['artists'][0]['name']
         ref = item['track']['href']
-        images = item['track']['album']['images'][-1]['url']
+        large_image = item['track']['album']['images'][0]['url']
+        medium_image = item['track']['album']['images'][1]['url']
+        small_image = item['track']['album']['images'][2]['url']
         # preview_url = item['track']['preview_url']
-        songs.append([song_name, artist, ref, images]) # 曲名, アーティスト, URL, 画像
+        songs.append([song_name, artist, ref, large_image, medium_image, small_image]) # 曲名, アーティスト, URL, 画像(大), 画像(中), 画像(小)
     if len(songs) < RECOMMEND_NUM:
-        return random.sample(songs, RECOMMEND_NUM)
+        return songs
     else:
         return random.sample(songs, RECOMMEND_NUM)
 
@@ -142,13 +144,15 @@ def get_books_by_title(title: str):
     for item in r.json()['Items']:
         title = item['Item']['title']
         url = item['Item']['itemUrl']
-        image = item['Item']['smallImageUrl']
+        large_image = item['Item']['largeImageUrl']
+        medium_image = item['Item']['mediumImageUrl']
+        small_image = item['Item']['smallImageUrl']
         author = item['Item']['author']
         review = item['Item']['reviewAverage']
         price_yen = item['Item']['itemPrice']
         publish_name = item['Item']['publisherName']
         item_caption = item['Item']['itemCaption']
-        return [title, url, image, author, review, price_yen, publish_name, item_caption] # タイトル, URL，画像, 作者, 評価(5点満点), 価格(円)，レーベル，あらすじ
+        return [title, url, large_image, medium_image, small_image, author, review, price_yen, publish_name, item_caption] # タイトル, URL，画像(大), 画像(中), 画像(小), 作者, 評価(5点満点), 価格(円)，レーベル，あらすじ
     return # 検索結果なし
 
 if __name__ == "__main__":
