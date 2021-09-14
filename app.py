@@ -92,10 +92,16 @@ def show():
     book_vector = sentiment_analyze(outline)
     #本とカテゴリの類似度計算
     cos = 0
-    for category in categories:
-        cos = max(cos,calulate_cos(book,category))
-    #spotify APIから音楽データをとってくる        
-    return render_template('result.html',title=title)
+    playlist_id = ""
+    for id, music_vector in RECOMMEND_PLAYLIST.items():
+        if cos < calulate_cos(book_vector,music_vector):
+            cos = calulate_cos(book_vector,music_vector)
+            playlist_id = id
+    #spotify APIにplaylist_idを渡す
+    songs = get_songs_from_playlist(playlist_id)       
+    return render_template('result.html',
+    title=title,image=image,writer=writer,label=label,price=price,review=review,
+    music=music)
 
 @app.route('/about')
 def aboutPage():
