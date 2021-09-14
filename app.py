@@ -100,7 +100,7 @@ def show():
     #spotify APIにplaylist_idを渡す
     song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)[0]      
     return render_template('result.html',
-    title=title,book_image=book_image,author=author,review=review,publish_name=publish_name,
+    title=title,book_image=book_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
     song_name=song_name,artist=artist,ref=ref,music_image=music_image)
 
 @app.route('/about')
