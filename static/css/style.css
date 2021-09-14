@@ -19,10 +19,6 @@ body{
     border-color: #4D4D4D;
 }
 
-.btn{
-    margin-top: 20px;
-}
-
 .btn-outline-success{
     background-color: #ffffff;
     color: #4D4D4D;
@@ -71,7 +67,21 @@ p.AIUEOsize{
 
 /* result responsive */
 .detail{
-    color: #333333;
+    color: #444444;
+}
+
+.music-photo{
+    width: 100px;
+}
+
+.btn-success{
+    color: #444444;
+    font-size: 3px;
+}
+
+.spotify-fig{
+    width: 23px;
+    margin-right: 4px;
 }
 
 @media (min-width: 992px) {
@@ -82,7 +92,7 @@ p.AIUEOsize{
         font-size: 20px;
     }
     .img-res img{
-        width: 400px;
+        width: 200px;
     }
 }
 @media (max-width: 991.98px) {
@@ -93,7 +103,7 @@ p.AIUEOsize{
         font-size: 13px;
     }
     .img-res img{
-        width: 350px;
+        width: 150px;
     }
 }
 @media (max-width: 767.98px) {
@@ -104,17 +114,17 @@ p.AIUEOsize{
         font-size: 15px;
     }
     .img-res img{
-        width: 500px;
+        width: 200px;
     }
 }
 @media (max-width: 575.98px) {
     .font-res {
-        font-size: 17px;
+        font-size: 18px;
     }
     .detail{
-        font-size: 12px;
+        font-size: 14px;
     }
     .img-res img{
-        width: 500px;
+        width: 150px;
     }
 }

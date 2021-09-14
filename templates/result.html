@@ -46,39 +46,45 @@
 
     <div class="container">
         <div class="row align-items-start d-flex justify-content-center m-3">
-            <div class="col-md-3 col-12 img-res">
+            <div class="col-6 img-res d-flex justify-content-center">
                 <img src="{{book_large_image}}" alt="">
             </div>           
-            <div class="col-md-4 col-6">
-                <p class="font-res">タイトル&nbsp;&nbsp;{{title}}</p>
+            <div class="col-6">
+                <p class="font-res">{{title}}</p>
                 <div class="my-3 detail">作家：&nbsp;&nbsp;{{author}}</div>
-                <div class="my-3 detail">雑誌・レーベル：&nbsp;&nbsp;{{publish_name}}</div>
-                <div class="my-3 detail">巻数・価格：&nbsp;&nbsp;{{price_yen}}</div>
+                <div class="my-3 detail">レーベル：&nbsp;&nbsp;{{publish_name}}</div>
+                <div class="my-3 detail">価格：&nbsp;&nbsp;{{price_yen}}円</div>
                 <div class="mt-3 detail">評価：&nbsp;&nbsp;{{review}}</div>
             </div>
-            <div class="col-md-4 col-6">
-                <p class="font-res">一緒に聞く音楽</p>
-                <div class="my-3 detail">曲名： &nbsp;&nbsp;{{song_name_1}}
-                    <img src="{{music_image_1}}">
-                    <a href="{{ref_1}}" type="button" class="btn rounded-pill" style="color: #000000; background-color: #1ED760;">Spotify</a>
-                </div>
-                <div class="my-3 detail">曲名： &nbsp;&nbsp;{{song_name_2}}
-                    <img src="{{music_image_2}}">
-                    <a href="{{ref_2}}" type="button" class="btn rounded-pill" style="color: #000000; background-color: #1ED760;">Spotify</a>
-                </div>
-                <div class="my-3 detail">曲名： &nbsp;&nbsp;{{song_name_3}}
-                    <img src="{{music_image_3}}">
-                    <a href="{{ref_3}}" type="button" class="btn rounded-pill" style="color: #000000; background-color: #1ED760;">Spotify</a>
-                </div>
-                <div class="mt-3 detail">曲名： &nbsp;&nbsp;{{song_name_4}}
-                    <img src="{{music_image_4}}">
-                    <a href="{{ref_4}}" type="button" class="btn rounded-pill" style="color: #000000; background-color: #1ED760;">Spotify</a>
+            <div class="col-12">
+                <p class="font-res" style="margin-top: 15px;">一緒に聞く音楽</p>
+                <div class = "row .d-flex .align-items-center">
+                    <div class="col-md-6 col-12 my-3 detail">{{song_name_1}}
+                        <a href="{{ref_1}}" type="button" class="btn btn-sm btn-outline-success rounded-pill float-right">
+                            <img class="spotify-fig" src="../static/images/Spotify.svg">で聞く</a>
+                        <div><img class = "music-photo mt-3" src="{{music_image_1}}"></div>
+                    </div>
+                    <div class="col-md-6 col-12 my-3 detail">{{song_name_2}}
+                        <a href="{{ref_2}}" type="button" class="btn btn-sm btn-outline-success rounded-pill float-right">
+                            <img class="spotify-fig" src="../static/images/Spotify.svg">で聞く</a>
+                        <div><img class = "music-photo mt-3" src="{{music_image_2}}"></div>
+                    </div>
+                    <div class="col-md-6 col-12 my-3 detail">{{song_name_3}}
+                        <a href="{{ref_3}}" type="button" class="btn btn-sm btn-outline-success rounded-pill float-right">
+                            <img class="spotify-fig" src="../static/images/Spotify.svg">で聞く</a>
+                        <div><img class = "music-photo mt-3" src="{{music_image_3}}"></div>
+                    </div>
+                    <div class="col-md-6 col-12 mt-3 detail">{{song_name_4}}
+                        <a href="{{ref_4}}" type="button" class="btn btn-sm btn-outline-success rounded-pill float-right">
+                            <img class="spotify-fig" src="../static/images/Spotify.svg">で聞く</a>
+                        <div><img class = "music-photo mt-3" src="{{music_image_4}}"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-5" style="padding-bottom:50px;">
-            <div class = "col-md-4 col-6">
-                <a href="https://www.spotify.com/jp/" type="button" class="btn rounded-pill" style="color: #000000; background-color: #1ED760;">Spotifyで聞く</a>
+            <div class = "col-md-4 col-6 text-center mt-3">
+                <a href="/" type="button" class="btn btn-outline-primary">検索に戻る</a>
             </div>
         </div>
     </div>
