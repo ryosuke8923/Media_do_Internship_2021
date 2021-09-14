@@ -3,3 +3,4 @@ libmecab-dev
 mecab-ipadic
 mecab-ipadic-utf8
 build-essential
+g++
