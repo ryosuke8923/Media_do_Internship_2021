@@ -20,10 +20,10 @@ def hello_world():
     return render_template('index.html')
 
 # "/" →　"〇〇.html"の結果表示のとこへ変更する
-@app.route("/",methods=["POST"])
+@app.route("/result.html",methods=["POST"])
 def show():
     title = request.form["title"]
-    return "ようこそ、" + title + "さん"
+    return render_template('result.html',title=title)
 
 @app.route('/about')
 def aboutPage():
