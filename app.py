@@ -86,10 +86,23 @@ def hello_world():
 def show():
     title = request.form["title"]
     #楽天APIにタイトル名を渡す.
-    title, url, book_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
+    if get_books_by_title(title) == [None,None,None,None,None,None,None,None]:
+      title = "????",
+      url = "????",
+      book_image = "????",
+      author = "????",
+      review = "????",
+      price_yen = "????",
+      publish_name = "????",
+      item_caption = None
+    else:
+      title, url, book_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
     #感情分析を行う．
-    #book_vector = sentiment_analyze(item_caption)
-    book_vector = [0,2,4,1,1,0,0,0,2,1]
+    if item_caption != None:
+      book_vector = [0,2,4,1,1,0,0,0,2,1]
+      #book_vector = sentiment_analyze(item_caption)
+    else: 
+      book_vector = [0,2,4,1,1,0,0,0,2,1]
     #本とカテゴリの類似度計算
     cos = 0
     playlist_id = ""
@@ -149,7 +162,7 @@ def get_books_by_title(title: str):
         publish_name = item['Item']['publisherName']
         item_caption = item['Item']['itemCaption']
         return [title, url, image, author, review, price_yen, publish_name, item_caption] # タイトル, URL，画像, 作者, 評価(5点満点), 価格(円)，レーベル，あらすじ
-    return # 検索結果なし
+    return [None,None,None,None,None,None,None,None]# 検索結果なし
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8888)))
