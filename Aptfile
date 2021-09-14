@@ -1,6 +1,0 @@
-g++-9
-mecab
-libmecab-dev
-mecab-ipadic
-mecab-ipadic-utf8
-build-essential
