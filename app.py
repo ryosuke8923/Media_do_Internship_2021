@@ -29,7 +29,7 @@ APP_ID = os.environ.get("APP_ID") # applicationId(rakuten books api)
 RECOMMEND_NUM = 1
 
 RECOMMEND_PLAYLIST = {
-    "6BGaNbk6J9JiPCjLAR3l3B": [-3, 4, -5, 3, 3, 0, 0, 2, 0, 5, 0],
+    "6BGaNbk6J9JiPCjLAR3l3B": [-3, 4, -5, 3, 3, 0, 0, 2, 0, 5],
     "5sjNdkqhmvF0RLOUwSI3AW": [1, -1, -2, 2, 0, -1, 0, -2, -3, 0],
     "0g2CExISe9gl5tCK0fGsC7": [-3, 3, 0, 0, 2, 0, 0, -2, 3, 0],
     "7eRL4exJUcTsmiNGpXR31u": [-3, 2, -5, 0, 2, 0, -3, -2, -3, 0],
@@ -98,7 +98,7 @@ def show():
             cos = calulate_cos(book_vector,music_vector)
             playlist_id = id
     #spotify APIにplaylist_idを渡す
-    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)       
+    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)[0]      
     return render_template('result.html',
     title=title,book_image=book_image,author=author,review=review,publish_name=publish_name,
     song_name=song_name,artist=artist,ref=ref,music_image=music_image)
