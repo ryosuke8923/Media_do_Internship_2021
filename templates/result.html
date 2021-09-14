@@ -45,6 +45,9 @@
     </header>
 
     <div class="container">
+        {% if title is none %}
+        検索結果なし
+        {% else %}
         <div class="row align-items-start d-flex justify-content-center m-3">
             <div class="col-6 img-res d-flex justify-content-center">
                 <img src="{{book_large_image}}" alt="">
@@ -82,6 +85,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         <div class="row justify-content-center mb-5" style="padding-bottom:50px;">
             <div class = "col-md-4 col-6 text-center mt-3">
                 <a href="/" type="button" class="btn btn-outline-primary">検索に戻る</a>
