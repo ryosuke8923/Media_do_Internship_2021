@@ -134,12 +134,14 @@ def get_books_by_title(title: str):
     # とりあえず1つだけ返す
     for item in r.json()['Items']:
         title = item['Item']['title']
+        url = item['Item']['itemUrl']
         image = item['Item']['smallImageUrl']
         author = item['Item']['author']
         review = item['Item']['reviewAverage']
+        price_yen = item['Item']['itemPrice']
         publish_name = item['Item']['publisherName']
         item_caption = item['Item']['itemCaption']
-        return [title, image, author, review, publish_name, item_caption] # タイトル, 画像, 作者, 評価(5点満点), レーベル，あらすじ
+        return [title, url, image, author, review, price_yen, publish_name, item_caption] # タイトル, URL，画像, 作者, 評価(5点満点), 価格(円)，レーベル，あらすじ
     return # 検索結果なし
 
 if __name__ == "__main__":
