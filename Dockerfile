@@ -1,7 +1,7 @@
 FROM python:3.7
 
-RUN apk update
-RUN apk add git
+RUN apt update
+RUN apt-get install git
 
 # Copy local code to the container image.
 ENV APP_HOME /app
