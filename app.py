@@ -29,16 +29,16 @@ APP_ID = os.environ.get("APP_ID") # applicationId(rakuten books api)
 RECOMMEND_NUM = 1
 
 RECOMMEND_PLAYLIST = {
-    "6BGaNbk6J9JiPCjLAR3l3B": (-3, 4, -5, 3, 3, 0, 0, 2, 0, 5, 0),
-    "5sjNdkqhmvF0RLOUwSI3AW": (1, -1, -2, 2, 0, -1, 0, -2, -3, 0),
-    "0g2CExISe9gl5tCK0fGsC7": (-3, 3, 0, 0, 2, 0, 0, -2, 3, 0),
-    "7eRL4exJUcTsmiNGpXR31u": (-3, 2, -5, 0, 2, 0, -3, -2, -3, 0),
-    "201Vyoy07NEhcbvxVcDxCO": (2, -2, 3, 0, 0, 2, 3, 3, 3, 0),
-    "78qiR2mpH9x1bAe7Bg2wjk": (-3, 3, -3, 0, 5, -3, -3, 1, 3, 0),
-    "5FUKrdhKliq1eSyQP8ioZ0": (-3, 3, -1, 0, 3, 0, 0, 2, 5, 0),
-    "5dQV25DPP9rfhUkOOh5VcD": (-3, 3, -3, 0, 4, -3, -3, 2, 3, 0),
-    "0s4S7bzYygOGXEzF1a8c4f": (-3, 0, -3, 0, 2, 0, 0, -2, -2, 0),
-    "0axQfChvnswvoQUpBTSomE": (-1, 3, -3, 0, 1, 0, 0, 1, 3, 0)
+    "6BGaNbk6J9JiPCjLAR3l3B": [-3, 4, -5, 3, 3, 0, 0, 2, 0, 5],
+    "5sjNdkqhmvF0RLOUwSI3AW": [1, -1, -2, 2, 0, -1, 0, -2, -3, 0],
+    "0g2CExISe9gl5tCK0fGsC7": [-3, 3, 0, 0, 2, 0, 0, -2, 3, 0],
+    "7eRL4exJUcTsmiNGpXR31u": [-3, 2, -5, 0, 2, 0, -3, -2, -3, 0],
+    "201Vyoy07NEhcbvxVcDxCO": [2, -2, 3, 0, 0, 2, 3, 3, 3, 0],
+    "78qiR2mpH9x1bAe7Bg2wjk": [-3, 3, -3, 0, 5, -3, -3, 1, 3, 0],
+    "5FUKrdhKliq1eSyQP8ioZ0": [-3, 3, -1, 0, 3, 0, 0, 2, 5, 0],
+    "5dQV25DPP9rfhUkOOh5VcD": [-3, 3, -3, 0, 4, -3, -3, 2, 3, 0],
+    "0s4S7bzYygOGXEzF1a8c4f": [-3, 0, -3, 0, 2, 0, 0, -2, -2, 0],
+    "0axQfChvnswvoQUpBTSomE": [-1, 3, -3, 0, 1, 0, 0, 1, 3, 0]
 }
 
 #分析(analyzer,feature)
@@ -86,9 +86,10 @@ def hello_world():
 def show():
     title = request.form["title"]
     #楽天APIにタイトル名を渡す.
-    title, book_image, author, review, publish_name, item_caption = get_books_by_title(title)
+    title, url, book_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
     #感情分析を行う．
-    book_vector = sentiment_analyze(item_caption)
+    #book_vector = sentiment_analyze(item_caption)
+    book_vector = [0,2,4,1,1,0,0,0,2,1]
     #本とカテゴリの類似度計算
     cos = 0
     playlist_id = ""
@@ -97,9 +98,9 @@ def show():
             cos = calulate_cos(book_vector,music_vector)
             playlist_id = id
     #spotify APIにplaylist_idを渡す
-    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)       
+    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)[0]      
     return render_template('result.html',
-    title=title,book_image=book_image,author=author,review=review,publish_name=publish_name,
+    title=title,book_image=book_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
     song_name=song_name,artist=artist,ref=ref,music_image=music_image)
 
 @app.route('/about')
