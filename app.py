@@ -26,7 +26,7 @@ spotify = spotipy.Spotify(client_credentials_manager=CLIENT_CREDENTIALS_MANAGER)
 
 APP_ID = os.environ.get("APP_ID") # applicationId(rakuten books api)
 
-RECOMMEND_NUM = 5
+RECOMMEND_NUM = 1
 
 RECOMMEND_PLAYLIST = {
     "6BGaNbk6J9JiPCjLAR3l3B": (-3, 4, -5, 3, 3, 0, 0, 2, 0, 5, 0),
@@ -86,10 +86,9 @@ def hello_world():
 def show():
     title = request.form["title"]
     #楽天APIにタイトル名を渡す.
-    book = get_books_by_title(title)
-    outline = ""
+    title, book_image, author, review, publish_name, item_caption = get_books_by_title(title)
     #感情分析を行う．
-    book_vector = sentiment_analyze(outline)
+    book_vector = sentiment_analyze(item_caption)
     #本とカテゴリの類似度計算
     cos = 0
     playlist_id = ""
@@ -98,10 +97,10 @@ def show():
             cos = calulate_cos(book_vector,music_vector)
             playlist_id = id
     #spotify APIにplaylist_idを渡す
-    songs = get_songs_from_playlist(playlist_id)       
+    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)       
     return render_template('result.html',
-    title=title,image=image,writer=writer,label=label,price=price,review=review,
-    music=music)
+    title=title,book_image=book_image,author=author,review=review,publish_name=publish_name,
+    song_name=song_name,artist=artist,ref=ref,music_image=music_image)
 
 @app.route('/about')
 def aboutPage():
@@ -134,12 +133,14 @@ def get_books_by_title(title: str):
     # とりあえず1つだけ返す
     for item in r.json()['Items']:
         title = item['Item']['title']
+        url = item['Item']['itemUrl']
         image = item['Item']['smallImageUrl']
         author = item['Item']['author']
         review = item['Item']['reviewAverage']
+        price_yen = item['Item']['itemPrice']
         publish_name = item['Item']['publisherName']
         item_caption = item['Item']['itemCaption']
-        return [title, image, author, review, publish_name, item_caption] # タイトル, 画像, 作者, 評価(5点満点), レーベル，あらすじ
+        return [title, url, image, author, review, price_yen, publish_name, item_caption] # タイトル, URL，画像, 作者, 評価(5点満点), 価格(円)，レーベル，あらすじ
     return # 検索結果なし
 
 if __name__ == "__main__":
