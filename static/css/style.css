@@ -70,10 +70,16 @@ p.AIUEOsize{
 }
 
 /* result responsive */
+.detail{
+    color: #333333;
+}
 
 @media (min-width: 992px) {
     .font-res {
         font-size: 25px;
+    }
+    .detail{
+        font-size: 20px;
     }
     .img-res img{
         width: 400px;
@@ -83,13 +89,19 @@ p.AIUEOsize{
     .font-res {
         font-size: 17px;
     }
+    .detail{
+        font-size: 13px;
+    }
     .img-res img{
         width: 350px;
     }
 }
 @media (max-width: 767.98px) {
     .font-res {
-        font-size: 20px;
+        font-size: 25px;
+    }
+    .detail{
+        font-size: 15px;
     }
     .img-res img{
         width: 500px;
@@ -98,6 +110,9 @@ p.AIUEOsize{
 @media (max-width: 575.98px) {
     .font-res {
         font-size: 17px;
+    }
+    .detail{
+        font-size: 12px;
     }
     .img-res img{
         width: 500px;
