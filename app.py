@@ -86,17 +86,7 @@ def hello_world():
 def show():
     title = request.form["title"]
     #楽天APIにタイトル名を渡す.
-    if get_books_by_title(title) == [None,None,None,None,None,None,None,None]:
-      title = "????",
-      url = "????",
-      book_image = "????",
-      author = "????",
-      review = "????",
-      price_yen = "????",
-      publish_name = "????",
-      item_caption = None
-    else:
-      title, url, book_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
+    title, url, book_large_image, book_medium_image, book_small_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
     #感情分析を行う．
     if item_caption != None:
       book_vector = [0,2,4,1,1,0,0,0,2,1]
@@ -117,7 +107,7 @@ def show():
     song_name_3, artist_3, ref_3, music_image_3 = music_data[2] 
     song_name_4, artist_4, ref_4, music_image_4 = music_data[3] 
     return render_template('result.html',
-    title=title,book_image=book_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
+    title=title,book_large_image=book_large_image,book_medium_image=book_medium_image,book_small_image=book_small_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
     song_name_1=song_name_1,artist_1=artist_1,ref_1=ref_1,music_image_1=music_image_1,
     song_name_2=song_name_2,artist_2=artist_2,ref_2=ref_2,music_image_2=music_image_2,
     song_name_3=song_name_3,artist_3=artist_3,ref_3=ref_3,music_image_3=music_image_3,
@@ -138,7 +128,7 @@ def get_songs_from_playlist(playlist_id: str):
         medium_image = item['track']['album']['images'][1]['url']
         small_image = item['track']['album']['images'][2]['url']
         # preview_url = item['track']['preview_url']
-        songs.append([song_name, artist, ref, large_image, medium_image, small_image]) # 曲名, アーティスト, URL, 画像(大), 画像(中), 画像(小)
+        songs.append([song_name, artist, ref, medium_image]) # 曲名, アーティスト, URL, 画像(大), 画像(中), 画像(小)
     if len(songs) < RECOMMEND_NUM:
         return songs
     else:
