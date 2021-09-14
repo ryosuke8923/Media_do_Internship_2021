@@ -123,7 +123,7 @@ def get_songs_from_playlist(playlist_id: str):
     for item in result['tracks']['items']:
         song_name = item['track']['name']
         artist = item['track']['artists'][0]['name']
-        ref = item['track']['href']
+        ref = item['track']['external_urls']['spotify']
         large_image = item['track']['album']['images'][0]['url']
         medium_image = item['track']['album']['images'][1]['url']
         small_image = item['track']['album']['images'][2]['url']
