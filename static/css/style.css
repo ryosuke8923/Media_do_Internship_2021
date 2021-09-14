@@ -60,3 +60,38 @@ p.AIUEOsize{
 .aboutsvg3{
     width: 70%;
 }
+
+/* result responsive */
+
+@media (min-width: 992px) {
+    .font-res {
+        font-size: 25px;
+    }
+    .img-res img{
+        width: 400px;
+    }
+}
+@media (max-width: 991.98px) {
+    .font-res {
+        font-size: 17px;
+    }
+    .img-res img{
+        width: 350px;
+    }
+}
+@media (max-width: 767.98px) {
+    .font-res {
+        font-size: 20px;
+    }
+    .img-res img{
+        width: 500px;
+    }
+}
+@media (max-width: 575.98px) {
+    .font-res {
+        font-size: 17px;
+    }
+    .img-res img{
+        width: 500px;
+    }
+}
