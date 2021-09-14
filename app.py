@@ -138,7 +138,8 @@ def get_books_by_title(title: str):
         author = item['Item']['author']
         review = item['Item']['reviewAverage']
         publish_name = item['Item']['publisherName']
-        return [title, image, author, review, publish_name] # タイトル, 画像, 作者, 評価(5点満点), レーベル
+        item_caption = item['Item']['itemCaption']
+        return [title, image, author, review, publish_name, item_caption] # タイトル, 画像, 作者, 評価(5点満点), レーベル，あらすじ
     return # 検索結果なし
 
 if __name__ == "__main__":
