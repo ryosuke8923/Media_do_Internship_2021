@@ -26,7 +26,7 @@ spotify = spotipy.Spotify(client_credentials_manager=CLIENT_CREDENTIALS_MANAGER)
 
 APP_ID = os.environ.get("APP_ID") # applicationId(rakuten books api)
 
-RECOMMEND_NUM = 1
+RECOMMEND_NUM = 4
 
 RECOMMEND_PLAYLIST = {
     "6BGaNbk6J9JiPCjLAR3l3B": [-3, 4, -5, 3, 3, 0, 0, 2, 0, 5],
@@ -98,10 +98,17 @@ def show():
             cos = calulate_cos(book_vector,music_vector)
             playlist_id = id
     #spotify APIにplaylist_idを渡す
-    song_name, artist, ref, music_image = get_songs_from_playlist(playlist_id)[0]      
+    music_data = get_songs_from_playlist(playlist_id)
+    song_name_1, artist_1, ref_1, music_image_1 = music_data[0]  
+    song_name_2, artist_2, ref_2, music_image_2 = music_data[1] 
+    song_name_3, artist_3, ref_3, music_image_3 = music_data[2] 
+    song_name_4, artist_4, ref_4, music_image_4 = music_data[3] 
     return render_template('result.html',
     title=title,book_image=book_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
-    song_name=song_name,artist=artist,ref=ref,music_image=music_image)
+    song_name_1=song_name_1,artist_1=artist_1,ref_1=ref_1,music_image_1=music_image_1,
+    song_name_2=song_name_2,artist_2=artist_2,ref_2=ref_2,music_image_2=music_image_2,
+    song_name_3=song_name_3,artist_3=artist_3,ref_3=ref_3,music_image_3=music_image_3,
+    song_name_4=song_name_4,artist_4=artist_4,ref_4=ref_4,music_image_4=music_image_4,)
 
 @app.route('/about')
 def aboutPage():
