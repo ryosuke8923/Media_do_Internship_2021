@@ -117,14 +117,23 @@ def get_songs_from_playlist(playlist_id: str):
         return random.sample(songs, RECOMMEND_NUM)
 
 def get_books_by_title(title: str):
-    url = "https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404"
+    url = "https://app.rakuten.co.jp/services/api/Kobo/EbookSearch/20170426"
     params = {
                 "format": "json",
+                "language": "JA",
                 "applicationId": APP_ID,
                 "title": title
              }
     r = requests.get(url, params=params)
-    return r.json()
+    # とりあえず1つだけ返す
+    for item in r.json()['Items']:
+        title = item['Item']['title']
+        image = item['Item']['smallImageUrl']
+        author = item['Item']['author']
+        review = item['Item']['reviewAverage']
+        publish_name = item['Item']['publisherName']
+        return [title, image, author, review, publish_name] # タイトル, 画像, 作者, 評価(5点満点), レーベル
+    return # 検索結果なし
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8888)))
