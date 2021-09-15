@@ -40,6 +40,9 @@ RECOMMEND_PLAYLIST = {
     "0s4S7bzYygOGXEzF1a8c4f": [-3, 0, -3, 0, 2, 0, 0, -2, -2, 0],
     "0axQfChvnswvoQUpBTSomE": [-1, 3, -3, 0, 1, 0, 0, 1, 3, 0]
 }
+for k,v in RECOMMEND_PLAYLIST.items():
+  n = list(map(lambda x: x/10, RECOMMEND_PLAYLIST[k]))
+  RECOMMEND_PLAYLIST[k] =  n 
 
 #分析(analyzer,feature)
 analyzer = MLAsk()
@@ -63,7 +66,9 @@ def sentiment_analyze(outline):
         sentiment_dic[feature] == 0
       else:
         sentiment_dic[feature] = len(emotion[feature])
-  book_vector = change_vector(sentiment_dic)
+    book_vector = change_vector(sentiment_dic)
+  else:
+    book_vector = [0,2,4,1,1,0,0,0,2,1]
   return book_vector
 
 #本とカテゴリの類似度計算
@@ -89,8 +94,7 @@ def show():
     title, url, book_large_image, book_medium_image, book_small_image, author, review, price_yen, publish_name, item_caption = get_books_by_title(title)
     #感情分析を行う．
     if item_caption != None:
-      book_vector = [0,2,4,1,1,0,0,0,2,1]
-      #book_vector = sentiment_analyze(item_caption)
+      book_vector = sentiment_analyze(item_caption)
     else: 
       book_vector = [0,2,4,1,1,0,0,0,2,1]
     #本とカテゴリの類似度計算
