@@ -50,10 +50,10 @@
         {% else %}
         <div class="row align-items-start d-flex justify-content-center m-3">
             <div class="col-6 img-res d-flex justify-content-center">
-                <img src="{{book_large_image}}" alt="">
+                <a href="{{url}}"><img src="{{book_large_image}}" alt=""></a>
             </div>           
             <div class="col-6">
-                <p class="font-res">{{title}}</p>
+                <p class="font-res"><a href="{{url}}">{{title}}</a></p>
                 <div class="my-3 detail">作家：&nbsp;&nbsp;{{author}}</div>
                 <div class="my-3 detail">レーベル：&nbsp;&nbsp;{{publish_name}}</div>
                 <div class="my-3 detail">価格：&nbsp;&nbsp;{{price_yen}}円</div>

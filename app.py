@@ -111,7 +111,7 @@ def show():
     song_name_3, artist_3, ref_3, music_image_3 = music_data[2] 
     song_name_4, artist_4, ref_4, music_image_4 = music_data[3] 
     return render_template('result.html',
-    title=title,book_large_image=book_large_image,book_medium_image=book_medium_image,book_small_image=book_small_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
+    title=title,url=url,book_large_image=book_large_image,book_medium_image=book_medium_image,book_small_image=book_small_image,author=author,review=review,price_yen=price_yen,publish_name=publish_name,
     song_name_1=song_name_1,artist_1=artist_1,ref_1=ref_1,music_image_1=music_image_1,
     song_name_2=song_name_2,artist_2=artist_2,ref_2=ref_2,music_image_2=music_image_2,
     song_name_3=song_name_3,artist_3=artist_3,ref_3=ref_3,music_image_3=music_image_3,
