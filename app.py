@@ -38,8 +38,18 @@ RECOMMEND_PLAYLIST = {
     "5FUKrdhKliq1eSyQP8ioZ0": [-3, 3, -1, 0, 3, 0, 0, 2, 5, 0],
     "5dQV25DPP9rfhUkOOh5VcD": [-3, 3, -3, 0, 4, -3, -3, 2, 3, 0],
     "0s4S7bzYygOGXEzF1a8c4f": [-3, 0, -3, 0, 2, 0, 0, -2, -2, 0],
-    "0axQfChvnswvoQUpBTSomE": [-1, 3, -3, 0, 1, 0, 0, 1, 3, 0]
+    "0axQfChvnswvoQUpBTSomE": [-1, 3, -3, 0, 1, 0, 0, 1, 3, 0],
+    "3mBDzf6mlMOdtaYUyv2pSP": [-3, 3, -2, 0, 3, 0, -2, 3, 5, 0],
+    "55eIdvGgMMauK2wxmHrRwF": [0, 3, 0, 0, 5, 0, 0, 2, 3, 0],
+    "2kvS4vbHe5X9VSpyrvfPmg": [2, 1, 1, 0, 2, 1, -2, -2, -3, 0],
+    "3UjF48ermq8mvO5m5PGjg4?si=135a86d81fc449f9&nd=1": [-5, 4, 2, 3, 0, -4, 3, 0, 5, 0],
+    "4jGnTsYCkQh5OiVUpocHOC?si=8170c15fa6d044c6": [-3, 3, -3, 4, 3, 0, -3, 2, 2, 0],
+    "5fuWZQ1o4ViDHoPP1IZ0QJ": [-3, 2, -2, 0, 3, 2, -2, -2, 4, 0],
+    "37bzS3YW45JAEwcCgQtxGj": [0, 2, 0, 0, 3, 0, 0, 3, 4, 0],
+    "7HmSjcMKUgmKYiVatRTvDM?si=2b744968547b4365": [0, 4, -5, 0, 1, -2, 0, 2, 4, 0],
+    "3dMbFdufD0w1EtPnKEDDEg?si=0cf538a4ff6b4526": [-4, 4, 0, 4, 3, 0, 1, 1, 2, 0]
 }
+
 for k,v in RECOMMEND_PLAYLIST.items():
   n = list(map(lambda x: x/10, RECOMMEND_PLAYLIST[k]))
   RECOMMEND_PLAYLIST[k] =  n 
