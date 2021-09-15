@@ -126,13 +126,19 @@ def get_songs_from_playlist(playlist_id: str):
     result = spotify.playlist(playlist_id)
     for item in result['tracks']['items']:
         song_name = item['track']['name']
-        artist = item['track']['artists'][0]['name']
+        if len(item['track']['artists']) == 0:
+          artist = None
+        else:
+          artist = item['track']['artists'][0]['name']
         ref = item['track']['external_urls']['spotify']
-        large_image = item['track']['album']['images'][0]['url']
-        medium_image = item['track']['album']['images'][1]['url']
-        small_image = item['track']['album']['images'][2]['url']
+        if len(item['track']['album']['images']) <= 1:
+          medium_image = None
+        else:
+          medium_image = item['track']['album']['images'][1]['url']
+        # large_image = item['track']['album']['images'][0]['url']
+        # small_image = item['track']['album']['images'][2]['url']
         # preview_url = item['track']['preview_url']
-        songs.append([song_name, artist, ref, medium_image]) # 曲名, アーティスト, URL, 画像(大), 画像(中), 画像(小)
+        songs.append([song_name, artist, ref, medium_image]) # 曲名, アーティスト, URL, 画像(中)
     if len(songs) < RECOMMEND_NUM:
         return songs
     else:
