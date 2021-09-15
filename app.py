@@ -40,7 +40,6 @@ RECOMMEND_PLAYLIST = {
     "0s4S7bzYygOGXEzF1a8c4f": [-3, 0, -3, 0, 2, 0, 0, -2, -2, 0],
     "0axQfChvnswvoQUpBTSomE": [-1, 3, -3, 0, 1, 0, 0, 1, 3, 0],
     "3mBDzf6mlMOdtaYUyv2pSP": [-3, 3, -2, 0, 3, 0, -2, 3, 5, 0],
-    "55eIdvGgMMauK2wxmHrRwF": [0, 3, 0, 0, 5, 0, 0, 2, 3, 0],
     "2kvS4vbHe5X9VSpyrvfPmg": [2, 1, 1, 0, 2, 1, -2, -2, -3, 0],
     "3UjF48ermq8mvO5m5PGjg4?si=135a86d81fc449f9&nd=1": [-5, 4, 2, 3, 0, -4, 3, 0, 5, 0],
     "4jGnTsYCkQh5OiVUpocHOC?si=8170c15fa6d044c6": [-3, 3, -3, 4, 3, 0, -3, 2, 2, 0],
