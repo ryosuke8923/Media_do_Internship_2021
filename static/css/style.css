@@ -61,7 +61,10 @@ p.AIUEOsize{
 }
 @media screen and (max-width:420px) {
     p.AIUEOsize2{
-        font-size: 15px;
+        font-size: 13px;
+    }
+    p.AIUEOsize{
+        font-size: 17px;
     }
 }
 
@@ -126,5 +129,21 @@ p.AIUEOsize{
     }
     .img-res img{
         width: 150px;
+    }
+}
+/* ヘッダー */
+nav.headercolor{
+    background-color:#ccefbf;
+}
+
+
+/* フッター */
+
+footer.fixed-bottom{
+    background-color:#ccefbf;
+}
+@media screen and (max-width:420px){
+    p.footersize{
+        font-size: 10px;
     }
 }
