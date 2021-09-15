@@ -19,6 +19,8 @@ RUN apt-get install -y libmecab-dev \
                         mecab-ipadic-utf8 \
                         build-essential
 
+RUN pip install mecab
+
 RUN git clone https://github.com/hiraikiichi/team_c.git
 ENV FLASK_APP /app/team_c/app.py
 CMD flask run -h 0.0.0.0 -p $PORT
