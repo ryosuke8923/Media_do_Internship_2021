@@ -5,7 +5,7 @@
 コンテナイメージ管理
 - Procfile  
 Herokuでどのアプリを動かすかの指示
-- app.py  
+- app.py.py  
 
 - requirements.txt  
 Pythonパッケージ指定
